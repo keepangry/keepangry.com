@@ -1,0 +1,15 @@
+﻿<div class="container">
+
+    <textarea class="form-control" rows="5" ng-model="note.content"></textarea>
+
+    <button type="submit" class="btn btn-primary" ng-click="create()">发布</button>
+
+    <table class="table">
+        <tr><td>内容</td><td>时间</td></tr>
+        <tr ng-repeat="row in rows">
+            <td class="col-md-1">{{row.content}}</td>
+            <td class="col-md-1">{{row.time}}</td>
+        </tr>
+    </table>
+
+</div>
