@@ -5,18 +5,37 @@ class NoteController extends Controller {
     public function index(){
         $this->show('note/index','utf-8');
     }
-    public function create(){
+
+    public function wap(){
         $Note = M("Note");
+        $result = $Note->order('time desc')->select();
+        $this->assign('note_data',$result);
+
+
+        $this->display('note/wap');
+    }
+    public function wap_create(){
+        $Note = M("Note");
+        $result = $Note->create();
+        $Note->add();
+        
+        $this->success('新增成功', '/home/note/wap');
+    }
+
+
+    public function create(){
 
         ##angularjs传的是json字符串，
-        $data = json_decode(file_get_contents('php://input'),true);
+        $data = json_decode(file_get_contents('php://input'),true); 
+        
+
+        $Note = M("Note");
         $result = $Note->create($data);
-
-
         $Note->add();
 
-        $this->show('note/create','utf-8');
+        $this->show('123','utf-8');
     }
+
     public function query(){
         $Note = M("Note");
 

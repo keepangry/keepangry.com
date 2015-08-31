@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>note手机端</title>
+</head>
+<body>
+
+<form action="/home/note/wap_create" method="post">
+    <textarea name="content" rows="5" cols="80%"></textarea>
+    <br />
+    <input type="hidden" name="type" value="微博"/>
+    <button type="submit">提交</button>
+</form>
+
+
+
+
+<div>
+    <foreach name="note_data" item="item" >
+        <div>{$item['time']}</div>
+        <div>{$item['content']}</div>
+        <hr>
+    </foreach>
+</div>
+
+</body>
+</html>
