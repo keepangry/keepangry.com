@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class NoteController extends Controller {
     public function index(){
-        $this->show('note/index','utf-8');
+        $this->show('Note/index','utf-8');
     }
 
     public function wap(){
@@ -12,14 +12,14 @@ class NoteController extends Controller {
         $this->assign('note_data',$result);
 
 
-        $this->display('note/wap');
+        $this->display('Note/wap');
     }
     public function wap_create(){
         $Note = M("Note");
         $result = $Note->create();
         $Note->add();
         
-        $this->success('新增成功', '/home/note/wap');
+        $this->success('新增成功', '/Home/Note/wap');
     }
 
 
